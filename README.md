@@ -13,25 +13,25 @@ Analyse and understand requirements
   
 Building the Data Warehouse (Data Egineering)
 
-Objective - Using sql server, develop and modern warehouse to consolidate sales data, enable analytical reporting and inform the deciosn making process. 
+**Objective** - Using sql server, develop and modern warehouse to consolidate sales data, enable analytical reporting and inform the deciosn making process. 
 
 **Specifications**📋
 
-Data sources: Import data as CSV files from two sources, ERP and CRM
+**Data sources**: Import data as CSV files from two sources, ERP and CRM
 
-Data quality: Cleanse and normalise data prior to analysis 
+**Data quality**: Cleanse and normalise data prior to analysis 
 
-Intergration: Combine both sources into a single, user firendly data model designed for analytical queries
+**Intergration**: Combine both sources into a single, user firendly data model designed for analytical queries
 
-Scope: Focus on the latest dataset only, historisation of data not required
+**Scope**: Focus on the latest dataset only, historisation of data not required
 
-Documentation: Provide clear documentation of the data model to support both business stakeholders and analytical teams.
+**Documentation**: Provide clear documentation of the data model to support both business stakeholders and analytical teams.
 
 ---------------------------------------
 
 🏢**BUSINESS INTELLIGENCE ANALYTICS AND REPORTING**🏢
 
-Objective:
+**Objective**:
 Develop sql based analytics to deliver detailed business insight into:
 
 Customer behaviour
