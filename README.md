@@ -2,8 +2,8 @@
 
 🛠️ Welcome to my "Data Warehouse and Analytics Project" Repository!!! 🛠️
 
-This project demonstrates a comprehensive solution to data warehouse creation, from sourcing and normalising raw data to, analytical solutions using sql with the aim of providing actionable business insights.
-Designed as a portfolio project with the intent of highlighting the best practises in data egineering and analyssis.
+This project demonstrates a comprehensive solution to data warehouse creation, from sourcing and normalising raw data, to analytical solutions using sql with the aim of providing actionable business insights.
+This work is designed as a portfolio project with the intent of highlighting the best practises in data egineering and analyssis.
 -------------------------------------
 ///PROJECT REQUIREMENTS/// 
 - Analyse and understand requirements
@@ -21,15 +21,15 @@ Documentation: Provide clear documentation of the data model to support both bus
 🏢///BUSINESS INTELLIGENCE ANALYTICS AND REPORTING///🏢
 
 ---///Objective///:
-Develop sql based analyticsbto deliver detailed business insoght into:
+Develop sql based analytics to deliver detailed business insight into:
 Customer behaviour
 Product performance 
 Sales trends
 
-These insights will provide businesses and stakeholders with key business analytics in order to make strategic business decsions.  
+These insights will provide businesses and stakeholders with key business analytics in order to make strategic and informed business decsions.  
 
 ----------------------------------------
 
-🚀This project is licensed under the MIT LICENSE. You are free to use, modify and share this project with proper attribution. 
+🚀This project is licensed under the {MIT LICENSE}(LICENSE). You are free to use, modify and share this project with proper attribution. 
 
 I am a finance graduate and an aspiring data analyst with a passion for problem solving and tackling complex challenges. I am undergoing my first project in this field looking to gain holistic expirience in all aspects of data science from egineering to analysis!!!🧑‍💼  
