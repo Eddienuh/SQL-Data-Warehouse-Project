@@ -1,10 +1,13 @@
 **SQL-Data-Warehouse-Analytics-Project**
 
-🛠️ **Welcome to my "Data Warehouse and Analytics Project" Repository!!!** 🛠️
+🛠️**Welcome to my "Data Warehouse and Analytics Project" Repository!!!** 🛠️
 
-**This project demonstrates a comprehensive solution to data warehouse creation, from sourcing and normalising raw data, to analytical solutions using sql with the aim of providing actionable business insights.
-This work is designed as a portfolio project with the intent of highlighting the best practises in data egineering and analyssis.**
+This project demonstrates a comprehensive solution to data warehouse creation, from sourcing and normalising raw data, to analytical solutions using sql with the aim of providing actionable business insights.
+
+This work is designed as a portfolio project with the intent of highlighting the best practises in data egineering and analyssis.
+
 -------------------------------------
+
 **PROJECT REQUIREMENTS** 
 Analyse and understand requirements
   
@@ -15,11 +18,17 @@ Objective - Using sql server, develop and modern warehouse to consolidate sales 
 **Specifications**📋
 
 Data sources: Import data as CSV files from two sources, ERP and CRM
+
 Data quality: Cleanse and normalise data prior to analysis 
+
 Intergration: Combine both sources into a single, user firendly data model designed for analytical queries
+
 Scope: Focus on the latest dataset only, historisation of data not required
+
 Documentation: Provide clear documentation of the data model to support both business stakeholders and analytical teams.
+
 ---------------------------------------
+
 🏢**BUSINESS INTELLIGENCE ANALYTICS AND REPORTING**🏢
 
 Objective:
