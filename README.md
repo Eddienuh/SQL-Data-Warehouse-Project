@@ -29,9 +29,9 @@ Sales trends
 These insights will provide businesses and stakeholders with key business analytics in order to make strategic and informed business decsions.  
 
 ----------------------------------------
-LICENSE
+🪪LICENSE🪪
 
-🪪This project is licensed under the {MIT LICENSE}(LICENSE). You are free to use, modify and share this project with proper attribution. 
+This project is licensed under the {MIT LICENSE}(LICENSE). You are free to use, modify and share this project with proper attribution. 
 
 ----------------------------------------
 ABOUT ME🧑‍💼 
