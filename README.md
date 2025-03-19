@@ -29,7 +29,8 @@ Sales trends
 These insights will provide businesses and stakeholders with key business analytics in order to make strategic and informed business decsions.  
 
 ----------------------------------------
-
-🚀This project is licensed under the {MIT LICENSE}(LICENSE). You are free to use, modify and share this project with proper attribution. 
-
-I am a finance graduate and an aspiring data analyst with a passion for problem solving and tackling complex challenges. I am undergoing my first project in this field looking to gain holistic expirience in all aspects of data science from egineering to analysis!!!🧑‍💼  
+LICENSE
+🪪This project is licensed under the {MIT LICENSE}(LICENSE). You are free to use, modify and share this project with proper attribution. 
+----------------------------------------
+ABOUT ME🧑‍💼 
+I am a finance graduate and an aspiring data analyst with a passion for problem solving and tackling complex challenges. I am undergoing my first project in this field looking to gain holistic expirience in all aspects of data science from egineering to analysis!!!  
