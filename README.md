@@ -1,17 +1,17 @@
-# SQL-Data-Warehouse-Analytics-Project
+**SQL-Data-Warehouse-Analytics-Project**
 
 🛠️ Welcome to my "Data Warehouse and Analytics Project" Repository!!! 🛠️
 
 This project demonstrates a comprehensive solution to data warehouse creation, from sourcing and normalising raw data, to analytical solutions using sql with the aim of providing actionable business insights.
 This work is designed as a portfolio project with the intent of highlighting the best practises in data egineering and analyssis.
 -------------------------------------
-///PROJECT REQUIREMENTS/// 
+**PROJECT REQUIREMENTS** 
 - Analyse and understand requirements
   
 ///Building the Data Warehouse (Data Egineering)///
 Objective - Using sql server, develop and modern warehouse to consolidate sales data, enable analytical reporting and inform the deciosn making process. 
 
-///Specifications///📋
+**Specifications**📋
 
 Data sources: Import data as CSV files from two sources, ERP and CRM
 Data quality: Cleanse and normalise data prior to analysis 
@@ -19,7 +19,7 @@ Intergration: Combine both sources into a single, user firendly data model desig
 Scope: Focus on the latest dataset only, historisation of data not required
 Documentation: Provide clear documentation of the data model to support both business stakeholders and analytical teams.
 ---------------------------------------
-🏢///BUSINESS INTELLIGENCE ANALYTICS AND REPORTING///🏢
+🏢**BUSINESS INTELLIGENCE ANALYTICS AND REPORTING**🏢
 
 ---///Objective///:
 Develop sql based analytics to deliver detailed business insight into:
@@ -33,11 +33,11 @@ Sales trends
 These insights will provide businesses and stakeholders with key business analytics in order to make strategic and informed business decsions.  
 
 ----------------------------------------
-🪪LICENSE🪪
+🪪**LICENSE**🪪
 
 This project is licensed under the {MIT LICENSE}(LICENSE). You are free to use, modify and share this project with proper attribution. 
 
 ----------------------------------------
-ABOUT ME🧑‍💼 
+**ABOUT ME**🧑‍💼 
 
 I am a finance graduate and an aspiring data analyst with a passion for problem solving and tackling complex challenges. I am undergoing my first project in this field looking to gain holistic expirience in all aspects of data science from egineering to analysis!!!  
