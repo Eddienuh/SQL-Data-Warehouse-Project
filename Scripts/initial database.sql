@@ -28,7 +28,6 @@ Create database Datawarehouse;
 
 Use Datawarehouse;
 
-
 Go
 
 --Create Schemas
