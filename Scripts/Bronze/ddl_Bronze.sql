@@ -1,16 +1,16 @@
 /*
 ========================================================================================
 DDL Script: Create Bronze Tables
-========================================================================================
+=======================================================================================
 
 Script Purpose:
               This script creates tables in the bronze schema by firstly dropping tables if they already exist, and then recreating tables.
               This script also utilises bulk insert for each table load, ensuring to truncate each table before the load is executed.
               The time for each table load and for the batch load are both defined within the script.
-              Run this script to re-define the DDL structure of Bronze tables.
-              
+              Run this script to re-define the DDL structure of Bronze tables.  
+
 =========================================================================================
-/* 
+*/ 
 
 CREATE OR ALTER PROCEDURE Bronze.load_Bronze
 AS
