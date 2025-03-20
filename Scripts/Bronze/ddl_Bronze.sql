@@ -11,7 +11,11 @@ Script Purpose:
 =========================================================================================
 */ 
 
-PRINT '>> CHECK AND DROP Bronze.crm_cust_info IF TABLE EXISTS'; 
+                PRINT '----------------------------------------------';
+		PRINT 'Loading crm Tables';
+		PRINT '----------------------------------------------';
+
+		PRINT '>> CHECK AND DROP Bronze.crm_cust_info IF TABLE EXISTS'; 
 		IF OBJECT_ID('Bronze.crm_cust_info', 'U') IS NOT NULL
 		BEGIN
 			DROP TABLE Bronze.crm_cust_info;
@@ -109,4 +113,4 @@ PRINT '>> CHECK AND DROP Bronze.crm_cust_info IF TABLE EXISTS';
 		CAT NVARCHAR (50),
 		SUBCAT NVARCHAR (50),
 		MAINTENANCE NVARCHAR (50),
-		); 
+		);
