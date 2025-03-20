@@ -11,34 +11,35 @@ Running this script will drop the entire "Datawarehouse" database if it already 
 Ensure proper back ups are in place before running this script.
 */
 
---Create Database Datawarehouse--
+-Create Database Datawarehouse--
 
-use master;
-Go
+USE MASTER;
+GO
 
---Check if "Datawarehouse" already exists
---If true Drop "Datawarehouse"
-IF exists (Select * from sys.databases where name = 'Datawarehouse')
+IF exists (SELECT * fROM sys.databases WHERE NAME = 'Datawarehouse')
 BEGIN
    
-    Drop database Datawarehouse;
+    DROP DATABASE Datawarehouse;
 END
 
-Create database Datawarehouse;
+CREATE DATABASE Datawarehouse;
 
-Use Datawarehouse;
+USE Datawarehouse;
 
-Go
 
---Create Schemas
-Create Schema Bronze
+GO
 
-Go
+--CREATE SCHEMAS
+CREATE SCHEMA Bronze
 
-Create Schema Silver
+GO
 
-Go
+CREATE SCHEMA Silver
 
-Create Schema Gold
+GO
+
+CREATE SCHEMA Gold
+
+
  
 
