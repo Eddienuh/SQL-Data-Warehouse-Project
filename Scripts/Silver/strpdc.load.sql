@@ -161,3 +161,22 @@ SELECT
 FROM 
     Bronze.erp_CUST_AZ12; 
 
+========================================================================================================
+Silver.erp_LOC_A1O1
+========================================================================================================
+TRUNCATE TABLE Silver.erp_LOC_A1O1;
+
+INSERT INTO Silver.erp_LOC_A1O1 (
+	CID,
+	CNTRY
+)
+SELECT
+    REPLACE(CID, '-', '') AS CID,  -- Remove hyphens from CID
+    CASE
+        WHEN TRIM(CNTRY) = 'DE' THEN 'Germany'
+        WHEN TRIM(CNTRY) IN ('US', 'USA') THEN 'United States'
+        WHEN TRIM(CNTRY) = '' OR TRIM(CNTRY) IS NULL THEN 'Unknown'  -- Check for empty or NULL CNTRY
+        ELSE TRIM(CNTRY)  -- Return CNTRY as is after trimming
+    END AS CNTRY
+FROM Bronze.erp_LOC_A1O1;
+
