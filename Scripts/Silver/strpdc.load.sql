@@ -1,3 +1,6 @@
+========================================================================================================
+Silver.crm_cust_info
+========================================================================================================
 TRUNCATE TABLE Silver.crm_cust_info --To ensure the table is reset before use and data is not duplicated 
 
 --Insert relevant columns into Silver.crm_cust_info Table
@@ -36,3 +39,38 @@ FROM Bronze.crm_cust_info
 
 DELETE FROM Silver.crm_cust_info
 WHERE cust_id IS NULL  --Delete any remaining rows where customer id is NULL
+	
+==================================================================================================================================
+Silver.crm_prd_info
+==================================================================================================================================
+TRUNCATE TABLE Silver.crm_prd_info; -- Reset the table to ensure no previous data exists
+
+INSERT INTO Silver.crm_prd_info (
+    prd_id,
+    cat_id,
+    prd_key,
+    prd_nm,
+    prd_cost,
+    prd_line,
+    prd_start_date,
+    prd_end_date
+)
+SELECT
+    prd_id,
+    REPLACE(SUBSTRING(prd_key, 1, 5), '-', '_') AS cat_id,  -- Extract cat_id from Product Key & derive new column 
+    SUBSTRING(prd_key, 7, LEN(prd_key) - 6) AS prd_key,  -- Extract remainder of prd_key
+    prd_nm,
+    ISNULL(prd_cost, 0) AS prd_cost,  -- Replace NULL prd_cost with 0
+    CASE 
+        WHEN UPPER(TRIM(prd_line)) = 'M' THEN 'Mountain'
+        WHEN UPPER(TRIM(prd_line)) = 'R' THEN 'Road'
+        WHEN UPPER(TRIM(prd_line)) = 'S' THEN 'Other Sales' --Normalise & map product line codes to descriptive values
+        WHEN UPPER(TRIM(prd_line)) = 'T' THEN 'Touring'
+        ELSE 'Unknown'
+    END AS prd_line, 
+    CAST(prd_start_date AS DATE) AS prd_start_date, --Convert data type using casting
+    CAST(
+        LEAD(prd_start_date) OVER (PARTITION BY prd_key ORDER BY prd_start_date) - 1 AS DATE --Add new relevant data by enriching data
+    ) AS prd_end_date  --Calculate end date as one date before the next start date
+FROM Bronze.crm_prd_info; 
+
