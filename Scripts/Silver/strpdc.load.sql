@@ -180,3 +180,15 @@ SELECT
     END AS CNTRY
 FROM Bronze.erp_LOC_A1O1;
 
+========================================================================================================
+Silver.erp_PX_CAT_G1V2
+========================================================================================================
+TRUNCATE TABLE Silver.erp_PX_CAT_G1V2
+
+INSERT INTO Silver.erp_PX_CAT_G1V2 (ID, CAT, SUBCAT, MAINTENANCE)
+SELECT
+ID,
+CAT,
+SUBCAT,
+MAINTENANCE
+FROM Bronze.erp_PX_CAT_G1V2 
