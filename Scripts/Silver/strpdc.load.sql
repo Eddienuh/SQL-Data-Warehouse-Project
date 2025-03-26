@@ -72,5 +72,63 @@ SELECT
     CAST(
         LEAD(prd_start_date) OVER (PARTITION BY prd_key ORDER BY prd_start_date) - 1 AS DATE --Add new relevant data by enriching data
     ) AS prd_end_date  --Calculate end date as one date before the next start date
-FROM Bronze.crm_prd_info; 
+FROM Bronze.crm_prd_info;
+
+===================================================================================================================================
+Silver.crm_sales_details
+===================================================================================================================================
+TRUNCATE TABLE Silver.crm_sales_details
+
+INSERT INTO Silver.crm_sales_details (
+	sls_order_num,
+	sls_prd_key,
+	sls_cust_id,
+	sls_order_dt,
+	sls_ship_dt,
+	sls_due_dt,
+	sls_sales,
+	sls_quantity,
+	sls_price
+)
+SELECT 
+    sls_order_num,
+    sls_prd_key,
+    sls_cust_id,
+    
+    -- Handle Invalid data in the form of order date utilising CAST function (sls_order_dt) 
+    CASE 
+        WHEN sls_order_dt = 0 OR LEN(CAST(sls_order_dt AS VARCHAR)) != 8 THEN NULL
+        ELSE CAST(CAST(sls_order_dt AS VARCHAR) AS DATE) 
+    END AS sls_order_dt,
+
+    -- Handle the ship date (sls_ship_dt)
+    CASE 
+        WHEN sls_ship_dt = 0 OR LEN(CAST(sls_ship_dt AS VARCHAR)) != 8 THEN NULL
+        ELSE CAST(CAST(sls_ship_dt AS VARCHAR) AS DATE)
+    END AS sls_ship_dt,
+
+    -- Handle the due date (sls_due_dt)
+    CASE 
+        WHEN sls_due_dt = 0 OR LEN(CAST(sls_due_dt AS VARCHAR)) != 8 THEN NULL
+        ELSE CAST(CAST(sls_due_dt AS VARCHAR) AS DATE)
+    END AS sls_due_dt,
+
+	--Calculate corrected sales
+
+	CASE 
+        WHEN sls_sales IS NULL OR sls_sales <= 0 OR sls_sales != sls_quantity * ABS(sls_price)
+        THEN sls_quantity * ABS(sls_price)
+        ELSE sls_sales
+	END AS sls_sales, --Recalculate sales if original value is missing or incorrect
+    sls_quantity,
+
+	--Calculate corrected price
+
+      CASE 
+        WHEN sls_price IS NULL OR sls_price <= 0
+        THEN sls_sales / NULLIF(sls_quantity, 0) 
+        ELSE sls_price
+	END AS sls_price --Derive price if original value is invalid
+FROM 
+    Bronze.crm_sales_details; 
 
