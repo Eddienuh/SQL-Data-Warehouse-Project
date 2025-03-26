@@ -132,3 +132,32 @@ SELECT
 FROM 
     Bronze.crm_sales_details; 
 
+=====================================================================================================
+Silver.erp_CUST_AZ12
+=====================================================================================================
+-- Truncate the table to remove all existing data
+TRUNCATE TABLE Silver.erp_CUST_AZ12;
+
+-- Insert new data with cleaned values
+INSERT INTO Silver.erp_CUST_AZ12 (
+    CID,
+    BDATE,
+    GEN
+)
+SELECT
+    CASE 
+        WHEN CID LIKE 'NAS%' THEN SUBSTRING(CID, 4, LEN(CID) - 3)  -- Handle invalid values and Remove 'NAS' prefix
+        ELSE CID
+    END AS CID,
+    CASE 
+        WHEN BDATE > GETDATE() THEN NULL  -- Sets future BDATE values to NULL
+        ELSE BDATE
+    END AS BDATE,
+    CASE
+        WHEN UPPER(TRIM(GEN)) IN ('F', 'FEMALE') THEN 'Female'  -- Standardize GEN as Female
+        WHEN UPPER(TRIM(GEN)) IN ('M', 'MALE') THEN 'Male'      -- Standardize GEN as Male
+        ELSE 'Unknown'                                          -- Handle any other values as 'Unknown'
+    END AS GEN
+FROM 
+    Bronze.erp_CUST_AZ12; 
+
