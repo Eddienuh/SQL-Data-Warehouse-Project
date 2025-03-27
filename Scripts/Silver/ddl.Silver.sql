@@ -1,3 +1,13 @@
+/*
+=====================================================================
+DDL Scripts: Create Silver Tables 
+=====================================================================
+Description: This script creates tables in the silver schema, 
+checking and dropping existing tables if they already exist.
+Run this script to redefine the DDL structure of Bronze tables.
+=====================================================================
+*/ 
+
 PRINT '----------------------------------------------';
 PRINT 'Loading crm Tables';
 PRINT '----------------------------------------------';
