@@ -1,4 +1,4 @@
-/*
+/* 
 ==================================================================================
 Data Quality Checks
 ==================================================================================
@@ -15,7 +15,7 @@ Usage Notes:
               - Run these checks after data loading Silver.
               - Investigate and resolve any discrepancies found during the checks. 
 ==================================================================================
-*/
+*/ 
 
 PRINT '======================================================';
 PRINT 'DATA QUALITY CHECKS FOR SILVER SCHEMA ';
