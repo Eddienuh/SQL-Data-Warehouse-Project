@@ -18,3 +18,22 @@ LEFT JOIN Silver.erp_CUST_AZ12 ca
 ON		ci.cust_key = ca.CID
 LEFT JOIN Silver.erp_LOC_A1O1 la
 ON		ci.cust_key = la.CID 
+
+
+CREATE VIEW Gold.dim_products AS
+SELECT
+	ROW_NUMBER () OVER (ORDER BY pn.prd_start_date, pn.prd_key) AS product_key, 
+	pn.prd_id AS product_id,
+	pn.prd_key AS product_number,
+	pn.prd_nm AS product_name,
+	pn.cat_id AS category_id,
+	pc.CAT AS category,
+	pc.SUBCAT AS subcategory,
+	pc.MAINTENANCE AS maintenance,
+	pn.prd_cost AS cost,
+	pn.prd_line AS product_line,
+	pn.prd_start_date AS start_date
+FROM Silver.crm_prd_info pn
+LEFT JOIN Silver.erp_PX_CAT_G1V2 pc
+ON pn.cat_id = pc.id
+WHERE prd_end_date IS NULL --Filter out all historical data 
