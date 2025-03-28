@@ -37,3 +37,23 @@ FROM Silver.crm_prd_info pn
 LEFT JOIN Silver.erp_PX_CAT_G1V2 pc
 ON pn.cat_id = pc.id
 WHERE prd_end_date IS NULL --Filter out all historical data 
+
+
+CREATE VIEW Gold.fact_sales AS
+SELECT
+	sd.sls_order_num AS order_number,
+	pr.product_key,
+	cu.customer_key,
+	sd.sls_order_dt AS order_date,
+	sd.sls_ship_dt AS shipping_date,
+	sd.sls_due_dt AS due_date,
+	sd.sls_sales AS sales_amount,
+	sd.sls_quantity AS quantity,
+	sd.sls_price AS price
+FROM Silver.crm_sales_details sd
+LEFT JOIN Gold.dim_products pr
+ON sls_prd_key = pr.product_number
+LEFT JOIN Gold.dim_customers cu
+ON sd.sls_cust_id = cu.customer_id
+ 
+
