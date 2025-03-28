@@ -7,7 +7,14 @@ This project demonstrates a comprehensive solution to data warehouse creation, f
 This work is designed as a portfolio project with the intent of highlighting the best practises in data egineering and analyssis.
 
 -------------------------------------
+**Project Overview**
+This project focuses on:
+  - **Data Architecture**: Designing a modern datawarehouse using the medallion architecture **Bronze**, **Silver** and **Gold** layers.
+  - **ETL**: Extracting, tranforming and loading data from source systems into datawarehouse.
+  - **Data Modelling**: Developing fact and dimension tables optimised for analytical queries.
+  - **Analytics & Reporting**: Creating SQL based reports and dashboards for actionable insights.  
 
+-------------------------------------
 **PROJECT REQUIREMENTS** 
 Analyse and understand requirements
   
@@ -28,6 +35,15 @@ Building the Data Warehouse (Data Egineering)
 **Documentation**: Provide clear documentation of the data model to support both business stakeholders and analytical teams.
 
 ---------------------------------------
+**Project Stages**
+
+1. Requirements Analysis
+2. Design Data Architecture
+3. Project Initialisation
+4. Build Bronze Layer
+5. Build Silver Layer
+6. Build Gold Layer
+---------------------------------------------------------
 
 🏢**BUSINESS INTELLIGENCE ANALYTICS AND REPORTING**🏢
 
