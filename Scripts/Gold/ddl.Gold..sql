@@ -1,3 +1,20 @@
+/*
+======================================================================================================
+***DDL Script: Create Gold View***
+======================================================================================================
+***Script Purpose:***
+	This script creates views for the Gold layer within the datawarehouse.
+	The Gold layer represents the final dimension and fact tables (star schema).
+	Each view performs transformations and combines data from the silver layer to produce a clean,
+	enriched and business-ready dataset.
+
+***Usage:***
+	These views can be queried directly for analytics and reporting.
+======================================================================================================
+*/
+
+
+
 CREATE VIEW Gold.dim_customers AS
 SELECT
 	ROW_NUMBER () OVER (ORDER BY cust_id) AS customer_key, 
