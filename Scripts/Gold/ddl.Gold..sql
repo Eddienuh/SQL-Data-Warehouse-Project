@@ -1,6 +1,6 @@
 /*
 ======================================================================================================
-***DDL Script: Create Gold View***
+DDL Script: Create Gold View
 ======================================================================================================
 ***Script Purpose:***
 	This script creates views for the Gold layer within the datawarehouse.
@@ -8,7 +8,7 @@
 	Each view performs transformations and combines data from the silver layer to produce a clean,
 	enriched and business-ready dataset.
 
-***Usage:***
+Usage:
 	These views can be queried directly for analytics and reporting.
 ======================================================================================================
 */
