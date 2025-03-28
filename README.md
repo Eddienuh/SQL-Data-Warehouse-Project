@@ -60,7 +60,10 @@ These insights will provide businesses and stakeholders with key business analyt
 
 ----------------------------------------
 **Project Architecture**
+
 The data architecture follows the medallion method as illustrated below.
+
+![image](https://github.com/user-attachments/assets/5b071bff-9752-4e45-bed2-826900e14640)
 
 ----------------------------------------
 🪪**LICENSE**🪪
