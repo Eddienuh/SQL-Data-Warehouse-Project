@@ -16,10 +16,9 @@ SELECT * FROM INFORMATION_SCHEMA.TABLES
 --Explore all columns in Database
 SELECT * FROM INFORMATION_SCHEMA.COLUMNS
 WHERE TABLE_NAME = 'dim_customers' --exploration example 
+-----------------------------------------------------------------------------------------------
 
-PRINT '------------------------------------------------------------------';
-PRINT 'Explore Country and Category Dimensions';
-PRINT '------------------------------------------------------------------';
+--EXPLORING COUNTRY & CATEGORY DIMENSIONS
 
 --Explore all countries our customers come from 
 SELECT DISTINCT country FROM Gold.dim_customers 
