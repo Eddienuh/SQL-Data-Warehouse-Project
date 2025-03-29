@@ -6,10 +6,10 @@ Script Purpose:
               This stored procedure loads data into the Bronze schema from local csv files.
               This script performs the following actions;
               1) Truncates the Bronze tables before loading data.
-              2) Uses the 'BULK INSERT' command to load data from csv files to Bronze tables.
+              2) Uses the 'BULK INSERT' command to load data from csv files into Bronze tables.
 
-Paramenters: None
-This stored procedure does not accept any parameters or rteurn any values.
+Parameters: None
+This stored procedure does not accept any parameters or return any values.
 
 Uasge example:
 EXECUTE Bronze.load_Bronze;
