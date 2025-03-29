@@ -1,6 +1,6 @@
 ***MODEL INTERGRATION***
 
-This diagram illustrates how CRM and ERP tables are linked, highlighting the attributes that serve as primary keys for connecting the two systems. 
+This diagram illustrates how CRM and ERP tables are linked, highlighting the attributes that serve as links for connecting the two systems. 
 
 The diagram showcases how these key attributes enable data integration across CRM and ERP systems.
 
