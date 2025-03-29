@@ -29,7 +29,7 @@ BEGIN
 	PRINT '==============================================';
 
 	PRINT '==============================================';
-	PRINT 'LOADING CRM TABLES';
+	PRINT 'Loading crm Tables';
 	PRINT '==============================================';
 
 	SET @START_TIME = GETDATE ();
@@ -177,7 +177,7 @@ SET @END_TIME = GETDATE ();
 
 
 	PRINT '==============================================';
-	PRINT 'LOADING ERP TABLES';
+	PRINT 'Loading erp Tables';
 	PRINT '==============================================';
 
 	SET @START_TIME = GETDATE ();
