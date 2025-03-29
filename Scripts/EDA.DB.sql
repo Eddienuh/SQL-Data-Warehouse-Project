@@ -1,3 +1,14 @@
+/*
+======================================================================
+Exploratory Data Analysis
+======================================================================
+Script Purpose:
+	This script contains multiple queries designed to explore various tables within our database.
+	The goal is to answer business-related analytical questions by querying the data and extracting relevant insights.
+======================================================================
+*/
+
+
 PRINT '-----------------------------------------------------';
 PRINT 'Explore Various Tables and Coluns Within the Database';
 PRINT '-----------------------------------------------------';
