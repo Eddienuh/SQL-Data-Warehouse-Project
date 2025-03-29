@@ -54,7 +54,7 @@ Customer behaviour
 
 Product performance 
 
-Sales trends
+Sale trends
 
 These insights will provide businesses and stakeholders with key business analytics in order to make strategic and informed business decsions.  
 
