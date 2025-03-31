@@ -10,9 +10,9 @@ Usage:  Queries can be adjusted using appropriate window functions to analyse bu
         and support informed decision-making.
 */
 
-=======================================================================================
+---------------------------------------------------------------------------------------
 --CHANGE-OVER-TIME (TRENDS)
-=======================================================================================
+---------------------------------------------------------------------------------------
 --Track trends and uncover seasonality in our data over time
         
 --Solution 1        
@@ -50,9 +50,9 @@ WHERE order_date IS NOT NULL
 GROUP BY FORMAT(order_date, 'yyyy-MMM')
 ORDER BY FORMAT(order_date, 'yyyy-MMM')
 
-========================================================================
+------------------------------------------------------------------------
 --CUMULATIVE ANALYSIS
-========================================================================
+------------------------------------------------------------------------
 --Calculate total sales per month
 --and the running total of sales over time
 
