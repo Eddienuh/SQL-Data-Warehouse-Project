@@ -13,7 +13,7 @@ Usage:  Queries can be adjusted using appropriate window functions to analyse bu
 ---------------------------------------------------------------------------------------
 --CHANGE-OVER-TIME (TRENDS)
 ---------------------------------------------------------------------------------------
---Track trends and uncover seasonality in our data over time
+--Task: Track trends and uncover seasonality in our data over time
         
 --Solution 1        
 SELECT
@@ -39,6 +39,7 @@ WHERE order_date IS NOT NULL
 GROUP BY DATETRUNC(month, order_date)
 ORDER BY DATETRUNC(month, order_date)
 
+	
 --Solution 3
 SELECT
 FORMAT(order_date, 'yyyy-MMM') AS order_date,
@@ -53,10 +54,10 @@ ORDER BY FORMAT(order_date, 'yyyy-MMM')
 ------------------------------------------------------------------------
 --CUMULATIVE ANALYSIS
 ------------------------------------------------------------------------
---Calculate total sales per month
+--Task: Calculate total sales per month
 --and the running total of sales over time
 
---Value of total sales month on month
+--1. Find the value of total sales month on month
 SELECT
 order_date,
 total_sales,
@@ -71,7 +72,8 @@ FROM
 	GROUP BY DATETRUNC(MONTH, order_date)
 )t
 
---Cumulative value of total sales year on year
+	
+--2. Find the cumulative value of total sales year on year
 SELECT
 order_date,
 total_sales,
@@ -87,7 +89,7 @@ FROM
 )t
 
 
---Moving average of total sales year on year
+--3. Calculate the moving average of total sales year on year
 SELECT
 order_date,
 total_sales,
