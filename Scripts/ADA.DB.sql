@@ -163,3 +163,48 @@ SELECT
 	END prev_yr_change
 	FROM yearly_products_sales
 	ORDER BY product_name, order_year
+
+
+------------------------------------------------------------------
+--PART-TO-WHOLE ANALYSIS
+------------------------------------------------------------------
+--Formula: ([measure]/total[measure])*100 by [dimension]
+
+--Task: Which categories contribute the most to overall sales
+
+-- 1. Select relevant information: Retrieve category and sales_amount
+SELECT
+    category,
+    sales_amount
+FROM Gold.fact_sales f
+LEFT JOIN Gold.dim_products p
+    ON f.product_key = p.product_key;
+
+-- 2. Calculate total sales for each category
+SELECT
+    category,
+    SUM(sales_amount) AS total_sales
+FROM Gold.fact_sales f
+LEFT JOIN Gold.dim_products p
+    ON f.product_key = p.product_key
+GROUP BY category;
+
+-- 3. Calculate overall sales using CTE and window function
+WITH category_sales AS (
+    -- Calculate total sales for each category
+    SELECT
+        category,
+        SUM(sales_amount) AS total_sales
+    FROM Gold.fact_sales f
+    LEFT JOIN Gold.dim_products p
+        ON f.product_key = p.product_key
+    GROUP BY category
+)
+-- 3b. Divide total sales by overall sales * 100 to get the part-to-whole percentage
+SELECT 
+    category,
+    total_sales,
+    SUM(total_sales) OVER () AS overall_sales,  -- Total sales across all categories
+    CONCAT(ROUND((CAST(total_sales AS FLOAT) / SUM(total_sales) OVER ())*100, 2), '%') AS percentage_of_total  -- Percentage of total sales
+FROM category_sales
+ORDER BY total_sales DESC
