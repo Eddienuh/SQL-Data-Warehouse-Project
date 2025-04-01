@@ -54,6 +54,8 @@ ORDER BY FORMAT(order_date, 'yyyy-MMM')
 ------------------------------------------------------------------------
 --CUMULATIVE ANALYSIS
 ------------------------------------------------------------------------
+--Formula: [cumulative measure] by [date dimension] 
+	
 --Task: Calculate total sales per month
 --and the running total of sales over time
 
