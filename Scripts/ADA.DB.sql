@@ -13,6 +13,8 @@ Usage:  Queries can be adjusted using appropriate window functions to analyse bu
 ---------------------------------------------------------------------------------------
 --CHANGE-OVER-TIME (TRENDS)
 ---------------------------------------------------------------------------------------
+--Formula: [measure] by [date dimension]
+
 --Task: Track trends and uncover seasonality in our data over time
         
 --Solution 1        
