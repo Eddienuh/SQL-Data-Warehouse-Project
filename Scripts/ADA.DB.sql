@@ -110,6 +110,7 @@ FROM
 ------------------------------------------------------------------
 --PERFORMANCE ANALYSIS (YEAR ON YEAR)
 ------------------------------------------------------------------
+--Formula: current[measure] - target[measure] 
 
 --Task:Analyse the yearly performance of products by comparing each products
 --sales to both its average sales performance and previous years sales
