@@ -4,18 +4,20 @@ Adavanced Data Analytics
 =========================================================================================
 Script Purpose:
         This script progresses on from the EDA script, providing more advanced queries to
-        further analyse our data in order to uncover trends in our business over time.
+        further analyse our data in order to uncover trends in our business. Each ADA section 
+	includes a business-related task, the identified formula for the solution, 
+	and a logical, step-by-step approach to solving it.
 
-Usage:  Queries can be adjusted using appropriate window functions to analyse business trends 
-        and support informed decision-making.
+Usage:  Queries can be tailored to analyze various business metrics, leveraging window 
+	functions to identify trends and support data-driven decision-making.
 */
 
 ---------------------------------------------------------------------------------------
 --CHANGE-OVER-TIME (TRENDS)
 ---------------------------------------------------------------------------------------
---Formula: [measure] by [date dimension]
 
 --Task: Track trends and uncover seasonality in our data over time
+--Formula: [measure] by [date dimension]
         
 --Solution 1        
 SELECT
@@ -56,11 +58,11 @@ ORDER BY FORMAT(order_date, 'yyyy-MMM')
 ------------------------------------------------------------------------
 --CUMULATIVE ANALYSIS
 ------------------------------------------------------------------------
---Formula: [cumulative measure] by [date dimension] 
-	
 --Task: Calculate total sales per month
 --and the running total of sales over time
-
+	
+--Formula: [cumulative measure] by [date dimension] 
+	
 --1. Find the value of total sales month on month
 SELECT
 order_date,
@@ -92,7 +94,6 @@ FROM
 	GROUP BY DATETRUNC(YEAR, order_date)
 )t
 
-
 --3. Calculate the moving average of total sales year on year
 SELECT
 order_date,
@@ -114,10 +115,10 @@ FROM
 ------------------------------------------------------------------
 --PERFORMANCE ANALYSIS (YEAR ON YEAR)
 ------------------------------------------------------------------
---Formula: current[measure] - target[measure] 
-
 --Task:Analyse the yearly performance of products by comparing each products
 --sales to both its average sales performance and previous years sales
+	
+--Formula: current[measure] - target[measure] 
 
 --1. Find the current yearly sales for each product 
 
@@ -134,7 +135,6 @@ WITH yearly_products_sales AS (
 	YEAR(f.order_date),
 	p.product_name
 )
-
 	
 --2. Find the average yearly sales for each product 
 SELECT 
@@ -168,9 +168,8 @@ SELECT
 ------------------------------------------------------------------
 --PART-TO-WHOLE ANALYSIS
 ------------------------------------------------------------------
+--Task: Which categories contribute the most to overall sales	
 --Formula: ([measure]/total[measure])*100 by [dimension]
-
---Task: Which categories contribute the most to overall sales
 
 -- 1. Select relevant information: Retrieve category and sales_amount
 SELECT
