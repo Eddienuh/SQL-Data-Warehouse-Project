@@ -4,21 +4,21 @@ CUSTOMER REPORT
 ======================================================================
 
 Purpose:
-		This script consolidates key customer metrics and behaviours
+	This script consolidates key customer metrics and behaviours
 
 Highlights:
-		1. Gathers essential fields such as names, ages and transaction details.
-		2. Segments customers into categories (VIP, Regular, New) and age groups.
-		3. Aggregates customer level metrics
-			- total orders
-			- total sales
-			- total quantity purchased
-			- total products
-			- lifespan (in months)
-		4. Calculates valuable KPI's 
-			- recency (months since last order)
-			- average order value
-			- average monthly spend
+	1. Gathers essential fields such as names, ages and transaction details.
+	2. Segments customers into categories (VIP, Regular, New) and age groups.
+	3. Aggregates customer level metrics
+		- total orders
+		- total sales
+		- total quantity purchased
+		- total products
+		- lifespan (in months)
+	4. Calculates valuable KPI's 
+		- recency (months since last order)
+		- average order value
+		- average monthly spend
 
 =========================================================================
 */ 
@@ -83,7 +83,7 @@ CASE
 	WHEN lifespan >= 12 AND total_sales <= 5000 THEN 'Regular'
 	ELSE 'New'
 END AS customer_segment,
---4. Get KPI'S from data
+--4. Extract KPI'S from data
 last_order_date,
 DATEDIFF(MONTH, last_order_date, GETDATE()) AS recency, --months since last order
 total_orders,
