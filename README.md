@@ -16,11 +16,12 @@ This project focuses on:
 
 -------------------------------------
 **PROJECT REQUIREMENTS** 
+
 Analyse and understand requirements
   
 Building the Data Warehouse (Data Egineering)
 
-**Objective** - Using sql server, develop and modern warehouse to consolidate sales data, enable analytical reporting and inform the deciosn making process. 
+**Objective** - Using sql server, develop a modern datawarehouse to consolidate sales data, enable analytical reporting and inform the deciosn making process. 
 
 **Specifications**📋
 
@@ -54,7 +55,7 @@ Customer behaviour
 
 Product performance 
 
-Sale trends
+Sales trends
 
 These insights will provide businesses and stakeholders with key business analytics in order to make strategic and informed business decsions.  
 
