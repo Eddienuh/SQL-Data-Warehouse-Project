@@ -5,8 +5,8 @@ Adavanced Data Analytics
 Script Purpose:
         This script progresses on from the EDA script, providing more advanced queries to
         further analyse our data in order to uncover trends in our business. Each ADA section 
-	includes a business-related task, the identified formula for the solution, 
-	and a logical, step-by-step approach to solving it.
+	includes a business-related task, our logic for the solution (formula), 
+	and a step-by-step approach to solving it.
 
 Usage:  Queries can be tailored to analyze various business metrics, leveraging window 
 	functions to identify trends and support data-driven decision-making.
@@ -151,7 +151,7 @@ SELECT
 		ELSE 'Avg'
 	END avg_change,
 
---2b. Compare current years sales to previous year sales
+--2b. Compare current year sales to previous year sales
 	LAG (current_sales) OVER (PARTITION BY product_name ORDER BY order_year) AS prev_yr_sales,
 	current_sales - LAG (current_sales) OVER (PARTITION BY product_name ORDER BY order_year) AS diff_per_yr,
 	CASE 
