@@ -3,7 +3,7 @@
 Data Quality Checks
 ==================================================================================
 Script Purpose:
-              This script performs various quality checks for data consistency
+              This script performs various quality checks for data consistency,
 accuracy and standardisation across the Silver schemas. It includes checks for:
               - Null and duplicate primary keys
               - Unwanted spaces in string fields
