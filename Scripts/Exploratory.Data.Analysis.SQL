@@ -62,7 +62,7 @@ SELECT SUM(quantity) AS total_quantity FROM Gold.fact_sales
 SELECT AVG(price) AS avg_price FROM Gold.fact_sales
 
 --Find the total number of orders
-SELECT COUNT(DISTINCT order_number) AS total_orders FROM Gold.fact_sales --We use the Distict function to eliminate duplicates
+SELECT COUNT(DISTINCT order_number) AS total_orders FROM Gold.fact_sales --We use the Distinct function to eliminate duplicates
                                                                          --& batch/bundle orders 
 
 --Find the total number of products
