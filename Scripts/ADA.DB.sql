@@ -207,3 +207,75 @@ SELECT
     CONCAT(ROUND((CAST(total_sales AS FLOAT) / SUM(total_sales) OVER ())*100, 2), '%') AS percentage_of_total  -- Percentage of total sales
 FROM category_sales
 ORDER BY total_sales DESC
+
+
+---------------------------------------------------------------------
+--DATA SEGMENTATION
+---------------------------------------------------------------------
+
+--Formula: [measure] by [measure]
+
+--Task 1: segment products into cost ranges and count how
+--many prodcuts fall into each segment
+
+--1. create cost range column and aggregate the data based on cost range dimension
+
+WITH product_segments AS (
+	SELECT
+		product_key,
+		product_name,
+		cost,
+		CASE 
+			WHEN cost < 100 THEN 'Below 100'
+			WHEN cost BETWEEN 100 AND 500 THEN '100-500'
+			WHEN cost BETWEEN 500 AND 1000 THEN '500-1000'
+			WHEN cost BETWEEN 1000 AND 1500 THEN '1000-1500'
+			ELSE 'Above 1500'
+		END cost_range
+	FROM Gold.dim_products)
+--1b. aggregate the data based on cost range dimension
+SELECT 
+cost_range,
+COUNT(product_key) AS total_products
+FROM product_segments
+GROUP BY cost_range 
+ORDER BY total_products DESC
+
+
+--Task 2. Group customers into three segments based on their spending behaviour
+			-- VIP: customers with atleast 12 months of hgistory and spending more than £5000
+			--Regular: customers with atleast 12 months of history but spending £5000 or less
+			--New: customers with a life span of less than 12 months
+			--And find the total number of customers for each group
+
+--1.Select relevant information
+WITH 
+	customer_spending AS (	
+	SELECT 
+	c.customer_key,
+	SUM(f.sales_amount) AS total_spend, --Find total spent for each customer
+	MIN(order_date) AS first_order, --Find oldest and most recent order 
+	MAX(order_date) AS last_order,
+	DATEDIFF(MONTH, MIN(order_date), MAX(order_date)) AS lifespan --Find lifespan in months
+	FROM Gold.fact_sales f
+	LEFT JOIN Gold.dim_customers c
+	ON c.customer_key = f.customer_key
+	GROUP BY c.customer_key)
+
+--1b.Create segments based on results and find total number of customers for each segment
+SELECT
+customer_segment,
+COUNT(customer_key) AS total_customers
+FROM(
+	SELECT 
+	customer_key,
+	CASE
+		WHEN lifespan >= 12 AND total_spend > 5000 THEN 'VIP'
+		WHEN lifespan >= 12 AND total_spend <= 5000 THEN 'Regular'
+		ELSE 'New'
+	END customer_segment
+FROM customer_spending) t
+GROUP BY customer_segment
+ORDER BY total_customers DESC
+
+
