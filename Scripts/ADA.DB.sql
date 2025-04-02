@@ -136,7 +136,7 @@ WITH yearly_products_sales AS (
 	p.product_name
 )
 	
---2. Find the average yearly sales for each product 
+--2. Find the average yearly sales for each product using CTE window function 
 SELECT 
 	order_year,
 	product_name,
@@ -188,7 +188,7 @@ LEFT JOIN Gold.dim_products p
     ON f.product_key = p.product_key
 GROUP BY category;
 
--- 3. Calculate overall sales using CTE and window function
+-- 3. Calculate overall sales using CTE windows function
 WITH category_sales AS (
     -- Calculate total sales for each category
     SELECT
