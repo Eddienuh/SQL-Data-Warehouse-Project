@@ -4,21 +4,21 @@ PRODUCT REPORT
 ======================================================================
 
 Purpose:
-		This script consolidates key product metrics and behaviours
+	This script consolidates key product metrics and behaviours
 
 Highlights:
-		1. Gathers essential fields such as product names, category, subcategory and costs.
-		2. Segments products by revenue to identify high-performers, mid-range, and low-performers.
-		3. Aggregates product level metrics
-			- total orders
-			- total sales
-			- total quantity sold
-			- total customers (unique)
-			- lifespan (in months)
-		4. Calculates valuable KPI's 
-			- recency (months since last sale)
-			- average order revenue (AOR)
-			- average monthly revenue
+	1. Gathers essential fields such as product names, category, subcategory and costs.
+	2. Segments products by revenue to identify high-performers, mid-range, and low-performers.
+	3. Aggregates product level metrics
+		- total orders
+		- total sales
+		- total quantity sold
+		- total customers (unique)
+		- lifespan (in months)
+	4. Calculates valuable KPI's 
+		- recency (months since last sale)
+		- average order revenue (AOR)
+		- average monthly revenue
 
 =========================================================================
 */ 
