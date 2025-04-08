@@ -67,7 +67,7 @@ BEGIN
 		*,
 		ROW_NUMBER() OVER (PARTITION BY cust_id ORDER BY cust_create_date DESC) AS flag_last
 	FROM Bronze.crm_cust_info
-	) t WHERE flag_last = 1 --Only select most recent record for each customer id to Filter data and ensure no duplicates are present
+	) t WHERE flag_last = 1 --Only select most recent record for each customer id to filter data and ensure no duplicates are present
 
 	DELETE FROM Silver.crm_cust_info
 	WHERE cust_id IS NULL  --Delete any remaining rows where customer id is NULL
