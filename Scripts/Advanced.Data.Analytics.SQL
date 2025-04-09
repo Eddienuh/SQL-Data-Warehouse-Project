@@ -243,7 +243,7 @@ ORDER BY total_products DESC
 
 
 --Task 2. Group customers into three segments based on their spending behaviour
-			-- VIP: customers with atleast 12 months of hgistory and spending more than £5000
+			-- VIP: customers with atleast 12 months of history and spending more than £5000
 			--Regular: customers with atleast 12 months of history but spending £5000 or less
 			--New: customers with a life span of less than 12 months
 			--And find the total number of customers for each group
